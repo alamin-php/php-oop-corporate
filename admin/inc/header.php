@@ -1,8 +1,23 @@
 <?php
-  header("Cache-Control: no-cache, must-revalidate");
-  header("Pragma: no-cache"); 
+  //set headers to NOT cache a page
+  header("Cache-Control: no-cache, must-revalidate"); //HTTP 1.1
+  header("Pragma: no-cache"); //HTTP 1.0
   header("Expires: Sat, 26 Jul 1997 05:00:00 GMT"); 
-  header("Cache-Control: max-age=2592000");
+  header("Cache-Control: max-age=2592000"); 
+?>
+
+<?php include "../lib/Session.php"; ?>
+<?php 
+	Session::init();
+	// Session::checkSession();
+?>
+<?php include "../config/config.php"; ?>
+<?php include "../lib/Database.php"; ?>
+<?php include "../helpers/Format.php"; ?>
+
+<?php 
+	$db = new Database();
+	$fm = new Format();
 ?>
 <!DOCTYPE html>
 <html>

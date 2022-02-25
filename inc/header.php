@@ -19,6 +19,11 @@
 	$hm = new Home();
 
 ?>
+
+<?php 
+    $filepath = realpath(basename(__FILE__));
+    
+?>
 <!DOCTYPE html>
 
 <html lang="en">
